@@ -1,0 +1,138 @@
+/* GLOBALS */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+:root {
+  --darkBlue: hsl(234, 12%, 34%);
+  --grayishBlue: hsl(229, 6%, 66%);
+  --veryLightGray: hsl(0, 0%, 98%);
+  --redBorder: hsl(0, 78%, 62%);
+  --greenBorder: hsl(180, 62%, 55%);
+  --orangeBorder: hsl(34, 97%, 64%);
+  --blueBorder: hsl(212, 86%, 64%);
+}
+
+.wrapper {
+  padding: 3em 3em 1em 3em;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+}
+
+.header-title {
+  color: var(--grayishBlue);
+  font-size: 1.85em;
+  font-weight: lighter;
+}
+
+h1 {
+  margin: 0;
+  color: var(--darkBlue);
+  font-size: 1.9em;
+}
+
+.header-text {
+  color: var(--grayishBlue);
+  font-size: 1.2em;
+  text-align: center;
+  line-height: 30px;
+}
+
+/* CARD */
+.gridCards {
+  display: grid;
+  justify-content: center;
+}
+
+.card {
+  background: var(--veryLightGray);
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  max-width: 300px;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 7px 9px 19px -4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 7px 9px 19px -4px rgba(0, 0, 0, 0.3);
+  box-shadow: 7px 9px 19px -4px rgba(0, 0, 0, 0.3);
+}
+
+.card::before {
+  content: '';
+  height: 4px;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.card.green::before {
+  border-top: 4px solid var(--greenBorder);
+}
+
+.card.red::before {
+  border-top: 4px solid var(--redBorder);
+}
+
+.card.orange::before {
+  border-top: 4px solid var(--orangeBorder);
+}
+
+.card.blue::before {
+  border-top: 4px solid var(--blueBorder);
+}
+
+.card-title {
+  color: var(--darkBlue);
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  color: var(--grayishBlue);
+  font-size: 0.8em;
+  padding-right: 4em;
+  line-height: 1.7em;
+}
+
+.card-icon {
+  text-align: right;
+  margin-top: 40px;
+}
+
+@media screen and (min-width: 375px) {
+  .header-container {
+    margin: 0 auto;
+    max-width: 650px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .gridCards {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 1em;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .header-title {
+    letter-spacing: 3.4px;
+    font-size: 2em;
+  }
+}
